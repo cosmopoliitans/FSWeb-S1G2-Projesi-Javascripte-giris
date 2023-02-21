@@ -92,9 +92,13 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(a){
-  return a*7;
+function kopeginYasi(yas){
+  yas=yas*7;
+  console.log("Köpeğin Yaşı:",yas);
+  return yas;
 }
+kopeginYasi(2);
+
 
 
 
@@ -112,8 +116,30 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
-function oyun(oyuncu, bilgisayar){
+function oyun(oyuncu, bilgisayar) {
   /*buraya kodunu yazabilirsin*/
+  switch (oyuncu) {
+    case "Taş":
+      return bilgisayar === "Makas"
+        ? "Kazandın!"
+        : bilgisayar === "Kağıt"
+        ? "Kaybettin!"
+        : "Beraberlik";
+
+    case "Kağıt":
+      return bilgisayar === "Makas"
+        ? "Kaybettin!"
+        : bilgisayar === "Kağıt"
+        ? "Beraberlik"
+        : "Kazandın!";
+
+    case "Makas":
+      return bilgisayar === "Makas"
+        ? "Beraberlik"
+        : bilgisayar === "Kağıt"
+        ? "Kazandın!"
+        : "Kaybettin!";
+  }
 }
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
@@ -131,7 +157,18 @@ function oyun(oyuncu, bilgisayar){
 Şimdi kendi seçtiğiniz bir seçime karşı bilgisayarın rastgele oluşturduğu seçimi yukarıda yazdığınız oyun fonsiyonu ile oynayın ve sonucu console'a yazdırın.
 Örn: console.log(oyun("Makas",bilgisayarinSecimi()))
 */
+function bilgisayarinSecimi() {
+  let elifRandomSayisi = Math.random() * 3;
+  if (elifRandomSayisi < 1) {
+    return "Taş";
+  } else if (elifRandomSayisi < 2) {
+    return "Makas";
+  } else {
+    return "Kağıt";
+  }
+}
 
+console.log(oyun("Makas", bilgisayarinSecimi()));
 /* Görev 4 : Metrik Dönüştürücü */
 
 //Görev 4a - Kilometreden Mil
@@ -142,8 +179,9 @@ Aşağdaki milDonusturucu fonksiyonunu aşağıdakileri kullanarak tamamlayın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
+function milDonusturucu(km){
   /*buraya kodunu yazabilirsin*/
+  return km * 0.621371;
 }
 
 
@@ -158,9 +196,13 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 Google'da arama ipucu: "feet cm dönüştürme"
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function feetDonusturucu(cm) {
+
+  cm= cm/30.48;
+  console.log('feet',cm);
+  return cm;
 }
+feetDonusturucu(15);
 
 
 
@@ -177,9 +219,13 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
-}
+function cocukSarkisi(b){
+  for (let i=5; i>0; i--) {
+    console.log(i,"Küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!:");
+  }
+return b;
+} 
+cocukSarkisi(5);
 
 
 /* Görev 6 : Not Hesaplayıcı */
@@ -197,9 +243,22 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
-}
+function notHesapla(puan){
+ 
+  if(puan>=90 && puan<=100) {
+  console.log("A aldın"); 
+  }
+  else if(puan>=80 && puan<=89) {
+    console.log("B aldın");
+  }
+  else if(puan>=70 && puan<=79) {
+   console.log("C aldın");
+  }
+  else if(puan>=60 && puan<=69) {
+    console.log("D aldın");
+  }
+  else { console.log("F aldın"); } }
+    notHesapla(85);
 
 
 
@@ -215,7 +274,8 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 */
 
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
+function sesliHarfSayaci(metin) {
+  
   /*buraya kodunu yazabilirsin*/
 }
 
