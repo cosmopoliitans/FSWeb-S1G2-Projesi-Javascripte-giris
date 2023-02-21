@@ -19,7 +19,13 @@ Aşağıdakileri yapın:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-
+var surucuYasi = 19;
+if (surucuYasi>=18) {
+  console.log("Ehliyet alabilir");
+}
+else {
+  console.log("Ehliyet alamaz");
+}
 
 
 /*
@@ -33,6 +39,12 @@ Aşağıdakileri yapınız:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
+let birinciDeger = 10;
+let ikinciDeger = 10;
+if (birinciDeger==ikinciDeger) {
+  birinciDeger= 20;
+  console.log(birinciDeger);
+}
 
 
 
@@ -48,7 +60,9 @@ Aşağıdakileri yapın:
 
    İPUCU: Number metoduna bakabilirsin
 */
-
+const stringSayi = 1999;
+const numberSayi = Number(stringSayi);
+console.log(numberSayi);
 
 
 
@@ -61,9 +75,10 @@ Aşağıdakileri yaparak carpma isimli fonksiyonu tamamlayın:
    3. console.log(carpma(7,4)) ile yazdığınız fonsiyonu test edin. Console'da sonucu 28 olarak görmelisiniz.
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function carpma(a,b){
+  return a*b;
 }
+console.log(carpma(7,8));
 
 
 
@@ -77,8 +92,8 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function kopeginYasi(a){
+  return a*7;
 }
 
 
